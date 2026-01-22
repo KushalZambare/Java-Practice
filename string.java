@@ -20,5 +20,6 @@ public class string {
         String e = a.substring(0,1).toUpperCase() + a.substring(1);
         String f = b.substring(0, 1).toUpperCase() + b.substring(1);
         System.out.println(e + " " + f);
+        System.out.println(" ");
     }
 }
