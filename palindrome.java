@@ -9,12 +9,13 @@ public class palindrome {
         String reversedStr = new StringBuilder(str).reverse().toString();
 
         if (str.equals(reversedStr)) {
-            System.out.println("The string is a palindrome.");
+            System.out.println("The string is a Palindrome.");
         } else {
-            System.out.println("The string is not a palindrome.");
+            System.out.println("The string is not a Palindrome.");
         }
 
         sc.close();
 
     }
+
 }
