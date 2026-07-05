@@ -19,7 +19,7 @@ static{
         flag = true;
     }
     else{
-        System.out.println("java.lang.Exception: Breadth and height must be positive");
+        System.out.println("java.lang.Exception: Breadth and height must be Positive");
     }
 }
 public static void main(String[] args){
