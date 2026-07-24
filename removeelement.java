@@ -1,24 +1,34 @@
 import java.util.ArrayList;
 
-public class removeelement {
-    public static void main(String[] args) {
-
-        int[] num = {2,2,3,2,3,4,5};
-        int val = 2;
-
+class solution{
+    public int remove(int[] nums, int val){
         ArrayList<Integer> list = new ArrayList<>();
-
-        for (int i = 0; i < num.length; i++) {
-            list.add(num[i]);
+        for (int i = 0; i < nums.length; i++) {
+            list.add(nums[i]);
         }
 
-        for (int i = 0; i < list.size(); i++ ) {
+        for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == val) {
                 list.remove(i);
-            } 
+                i--;
+            }
         }
 
-        System.out.println(list);
-        System.out.println(list.size());
+        for (int i = 0; i< list.size(); i++){
+            nums[i] = list.get(i);
+        }
+
+        return list.size();
+    }
+}
+
+public class removeelement {
+    public static void main(String[] args) {
+        solution sol = new solution();
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+        int newLength = sol.remove(nums, val);
+        System.out.println("New length after removing " + val + ": " + newLength);
+            
     }
 }
