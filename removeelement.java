@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 class solution{
     public int remove(int[] nums, int val){
