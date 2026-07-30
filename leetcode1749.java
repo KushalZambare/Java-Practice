@@ -9,7 +9,7 @@ class Leetcode1749 {
         int currMin = nums[0];
         int minSum = nums[0];
 
-        for (int i = 1; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++){
 
             totalSum += nums[i];
 
