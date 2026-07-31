@@ -18,7 +18,7 @@ class reverses {
     }
     public static void main(String[] args) {
         reverses rev = new reverses();
-        int number = 123;
+        int number = 1234;
         int reversedNumber = rev.reverse(number);
         System.out.println("Reversed number: " + reversedNumber);
     }
