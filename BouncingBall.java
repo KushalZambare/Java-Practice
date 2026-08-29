@@ -15,7 +15,7 @@ public class BouncingBall extends Applet implements Runnable {
 
     public void run() {
         while (true) {
-            x += dx;
+            x = x + dx;
             y += dy;
 
             if (x <= 0 || x >= getWidth() - 30)
