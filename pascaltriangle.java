@@ -20,7 +20,7 @@ class pascaltriangle{
     }
     public static void main(String[] args) {
         pascaltriangle pt = new pascaltriangle();
-        int numRows = 5; 
+        int numRows = 6; 
         List<List<Integer>> result = pt.generate(numRows);
         
         for (List<Integer> row : result) {
