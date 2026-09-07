@@ -1,27 +1,35 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class mergeinterval {
     public int[][] merge(int[][] intervals) {
-        if (intervals.length <= 1) {
-            return intervals;
-        }
-        for(int i = 0; i< intervals.length-1; i++){
-            for(int j = i+1; j<intervals.length; j++){
-                if (intervals[i][0]<intervals[j][1] && intervals[j][0]<intervals[i][1]){
-                    intervals[i][0] = Math.min(intervals[i][0], intervals[j][0]);
-                    intervals[i][1] = Math.max(intervals[i][1], intervals[j][1]);
-                    for(int k=j; k<intervals.length-1; k++){
-                        intervals[k] = intervals[k+1];
-                    }
-                    int[][] newIntervals = new int[intervals.length-1][2];
-                    for(int k=0; k<newIntervals.length; k++){
-                        newIntervals[k] = intervals[k];
-                    }
-                    intervals = newIntervals;
-                    j--;
-                }
-            }    
-        }
-        return intervals;
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        ArrayList<int[]> result = new ArrayList<>();
+
+        int start = intervals[0][0];
+        int end = intervals[0][1];
+
+        for (int i = 1; i < intervals.length; i++) {
+
+            int currentStart = intervals[i][0];
+            int currentEnd = intervals[i][1];
+
+            if (currentStart <= end) {
+                end = Math.max(end, currentEnd);
+            } 
+            else {
+                result.add(new int[]{start, end});
+
+                start = currentStart;
+                end = currentEnd;
     }
+        }
+
+        result.add(new int[]{start, end});
+
+        return result.toArray(new int[result.size()][]);
+}
     public static void main(String[] args) {
         mergeinterval obj = new mergeinterval();
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
